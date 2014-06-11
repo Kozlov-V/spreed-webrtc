@@ -52,6 +52,7 @@ require.config({
 		'sjcl': 'libs/sjcl',
 		'pdf': 'libs/pdf/pdf',
 		'pdf.worker': 'libs/pdf/pdf.worker',
+		'pdf.compatibility': 'libs/pdf/compatibility',
 
 		'partials': '../partials',
 		'sounds': '../sounds',
@@ -118,6 +119,7 @@ require.config({
 			exports: 'sjcl'
 		},
 		'pdf': {
+			deps: ['pdf.compatibility'],
 			exports: 'PDFJS'
 		}
 	}
