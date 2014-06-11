@@ -1,4 +1,4 @@
-/*!
+/*
  * Spreed WebRTC.
  * Copyright (C) 2013-2014 struktur AG
  *
@@ -19,31 +19,36 @@
  *
  */
 
-// must set custom compass variables before import of compass
-@import "global/variables";
-@import "compass";
-@import "libs/libs";
+.pdfviewer {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
-@import "global/mixins";
+.mainPdfviewer #pdfviewer {
+  display: block;
+}
 
-@import "global/base";
-@import "global/angular";
-@import "global/nicescroll";
-@import "global/animations";
-@import "global/overlaybar";
+.pdfviewerpane {
+  background: black;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
-@import "components/rightslide";
-@import "components/bar";
-@import "components/buddylist";
-@import "components/settings";
-@import "components/chat";
-@import "components/usability";
-@import "components/audiolevel";
-@import "components/fileinfo";
-@import "components/audiovideo";
-@import "components/screenshare";
-@import "components/roombar";
-@import "components/social";
-@import "components/pdfviewer";
+.pdfviewerpane {
+  canvas {
+    position: relative;
+  }
+}
 
-@import "shame";
+.pdfviewer .overlaybar {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
