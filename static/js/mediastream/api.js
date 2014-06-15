@@ -160,6 +160,9 @@ define(['jquery', 'underscore'], function($, _) {
 			case "Screenshare":
 				this.e.triggerHandler("received.screenshare", [d.To, d.From, data.Screenshare, d.p2p]);
 				break;
+			case "PdfViewer":
+				this.e.triggerHandler("received.pdfviewer", [d.To, d.From, data.PdfViewer, d.p2p]);
+				break;
 			case "Alive":
 				// Do nothing.
 				//console.log("Alive response received.");
@@ -308,6 +311,23 @@ define(['jquery', 'underscore'], function($, _) {
 		}
 
 		return this.send("Screenshare", data);
+
+	};
+
+	Api.prototype.sendPdfViewer = function(id, viewer_id, viewer_data) {
+
+		var data = {
+			Id: id,
+			Type: "PdfViewer",
+			PdfViewer: {
+				id: viewer_id
+			}
+		}
+        if (viewer_data) {
+            data.PdfViewer = _.extend(data.PdfViewer, viewer_data);
+        }
+
+		return this.send("PdfViewer", data);
 
 	};
 
